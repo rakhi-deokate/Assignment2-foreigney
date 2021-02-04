@@ -1,0 +1,44 @@
+<%= form_with(model: book) do |form| %>
+  <% if book.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(book.errors.count, "error") %> prohibited this book from being saved:</h2>
+
+      <ul>
+        <% book.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+<<<<<<< HEAD:Rakhi/Assignment2-foreignkey/app/views/books/_form.html.erb
+    <%= form.label :Title %>
+    <%= form.text_field :Title %>
+=======
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+>>>>>>> e119317a0f623e0eae36b8312c36026beb434c37:Nirmala/assignment2/app/views/books/_form.html.erb
+  </div>
+
+  <div class="field">
+    <%= form.label :published_year %>
+    <%= form.number_field :published_year %>
+  </div>
+<div class="field">
+    <%= form.label :author %>
+    <%= collection_select(:book, :author_id, Author.all, :id,:name, prompt: true)%>
+  </div>
+<<<<<<< HEAD:Rakhi/Assignment2-foreignkey/app/views/books/_form.html.erb
+
+  <div class="field">
+    <%= form.label :Author %>
+    <%= collection_select(:book, :author_id, Author.all, :id,:name, prompt: true)%>
+  </div>
+
+=======
+>>>>>>> e119317a0f623e0eae36b8312c36026beb434c37:Nirmala/assignment2/app/views/books/_form.html.erb
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
